@@ -11,7 +11,7 @@ function fillSquares(numberOfSquares) {
     createDiv(divHeight, numberOfSquares);
     let colourful = document.querySelector("input").checked;
     if (colourful) {
-        addRandomColours();
+        randomColours();
     }
     else {
         onlyBlack();
@@ -29,7 +29,7 @@ function createDiv(divHeight, numberOfSquares) {
     }
 }
 
-function addRandomColours() {
+function randomColours() {
     let divs = document.querySelectorAll("#container div");
     divs.forEach(div => {
         div.addEventListener("mouseover", function() {
@@ -89,5 +89,5 @@ window.addEventListener("keydown", (e) => {
 
 let colours = document.querySelector("input");
 colours.addEventListener("click", function() {
-    (colours.checked) ? addRandomColours() : onlyBlack();
+    (colours.checked) ? randomColours() : onlyBlack();
 })
