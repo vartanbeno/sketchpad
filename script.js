@@ -80,7 +80,7 @@ window.addEventListener("keydown", (e) => {
         fillSquares(numberOfSquares);
     }
     else if (e.keyCode == "82") {
-        checkForChildren();
+        resetGrid();
     }
     else {
         return;
