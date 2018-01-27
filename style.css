@@ -43,9 +43,9 @@ button {
     background-color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
-    padding: 5px;
+    padding: 10px 5px;
     border-radius: 5px;
-    height: 55px;
+    height: auto;
     width: 200px;
     outline: none;
     cursor: pointer;

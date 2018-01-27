@@ -4,13 +4,13 @@ let width = height;
 container.style.height = `${height}px`;
 container.style.width = `${width}px`;
 let numberOfSquares;
+let colourful = document.querySelector("input");
 
 function fillSquares(numberOfSquares) {
     checkForChildren();
     let divHeight = height/numberOfSquares;
     createDiv(divHeight, numberOfSquares);
-    let colourful = document.querySelector("input").checked;
-    if (colourful) {
+    if (colourful.checked) {
         randomColours();
     }
     else {
@@ -23,7 +23,7 @@ function createDiv(divHeight, numberOfSquares) {
         for (j = 0; j < numberOfSquares; j++) {
             let num = Math.random() * 10;
             let div = document.createElement("div");
-            div.setAttribute("style", `height: ${divHeight}px; width: ${divHeight}px; background-color: white; border: 1px solid black; box-sizing: border-box;`);
+            div.setAttribute("style", `height: ${divHeight}px; width: ${divHeight}px; background-color: inherit; border: 1px solid black; box-sizing: border-box;`);
             container.appendChild(div);
         }
     }
@@ -59,7 +59,7 @@ function checkForChildren() {
 function resetGrid() {
     let divs = document.querySelectorAll("#container div");
     divs.forEach(div => {
-        div.style.backgroundColor = "white";
+        div.style.backgroundColor = "inherit";
     });
 }
 
@@ -87,7 +87,6 @@ window.addEventListener("keydown", (e) => {
     }
 });
 
-let colours = document.querySelector("input");
-colours.addEventListener("click", function() {
-    (colours.checked) ? randomColours() : onlyBlack();
+colourful.addEventListener("click", function() {
+    (colourful.checked) ? randomColours() : onlyBlack();
 })
